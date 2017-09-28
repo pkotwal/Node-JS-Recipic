@@ -7,16 +7,18 @@ CSCI 5117, Fall 2017
 Please fill out all of the following sections to help us grade your submission:
 
 
-## Name of App: x
+## Name of App: Recipic
 
 
-## Name of Team: x
+## Name of Team: A team has no name
 
 
 ## Students
 
-* First Last, x500@umn.edu
-* ...
+* Aishwarya Gune, gune0016@umn.edu
+* Aishwarya Malpani, malpa004@umn.edu
+* Ameya Gurjar, gurja010@umn.edu
+* Pratk Kotwal, kotwal007@umn.edu
 
 
 ## Link to Site
