@@ -1,12 +1,16 @@
+{{> header}}
+
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-<form action="/upload-file-form" enctype="multipart/form-data" method="post" id="theform">
+<form action="/search" enctype="multipart/form-data" method="post" id="theform">
+  <!-- <form action="/upload-file-form" enctype="multipart/form-data" method="post" id="theform"> -->
   <p>
     <input id="theinputfield" type="file" name="thefile">
   </p>
   <p>
     <input type="submit" value="Send file (submit)" id="theSubmitButton">
+    <img id="blah" src="#" alt="your image" />
     <input type="button" value="Send file (ajax)" id="theAjaxButton">
   </p>
 </form>

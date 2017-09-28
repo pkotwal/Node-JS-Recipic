@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var request = require('request');
+var hbs = require('hbs');
 
 const Vision = require('@google-cloud/vision');
 const vision = Vision({keyFilename: './Recipe-finder-7e177e422ad4.json'
@@ -20,12 +21,15 @@ var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var search = require('./routes/search');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerPartials(__dirname + '/views/partials');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/search', search);
 
 // app.get('/searh-image', function(req, res){
 //   const request = {
@@ -58,6 +63,206 @@ app.use('/users', users);
 //   });
 //   res.send("OK");
 // });
+
+app.post('/test-json', function(req, res){
+  // var json = {[
+  //   {"mid":"/m/0cjtln","locale":"","description":"pulled pork","score":0.8614763617515564,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0c3y3jd","locale":"","description":"slider","score":0.8374393582344055,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/07pt9wt","locale":"","description":"appetizer","score":0.7889784574508667,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/05z6fm","locale":"","description":"beef on weck","score":0.7591284513473511,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0l515","locale":"","description":"sandwich","score":0.6702234148979187,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0cc7bks","locale":"","description":"buffalo burger","score":0.6582993865013123,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0bp3f6m","locale":"","description":"fried food","score":0.6489384770393372,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0cdn1","locale":"","description":"hamburger","score":0.6443697810173035,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/01z1jf2","locale":"","description":"american food","score":0.6412472128868103,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/02wbm","locale":"","description":"food","score":0.6021155118942261,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/02q08p0","locale":"","description":"dish","score":0.5973641276359558,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0119x1zy","locale":"","description":"bun","score":0.5898458957672119,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0b3dyl","locale":"","description":"finger food","score":0.5897143483161926,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/07fjx2","locale":"","description":"vetkoek","score":0.5624228715896606,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/04scj","locale":"","description":"meat","score":0.5404865741729736,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]},
+  //   {"mid":"/m/0p57p","locale":"","description":"recipe","score":0.5130674839019775,"confidence":0,"topicality":0,"boundingPoly":null,"locations":[],"properties":[]}]};
+
+var json = [
+  {
+    "mid": "/m/0cjtln",
+    "locale": "",
+    "description": "pulled pork",
+    "score": 0.8614763617515564,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0c3y3jd",
+    "locale": "",
+    "description": "slider",
+    "score": 0.8374393582344055,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/07pt9wt",
+    "locale": "",
+    "description": "appetizer",
+    "score": 0.7889784574508667,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/05z6fm",
+    "locale": "",
+    "description": "beef on weck",
+    "score": 0.7591284513473511,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0l515",
+    "locale": "",
+    "description": "sandwich",
+    "score": 0.6702234148979187,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0cc7bks",
+    "locale": "",
+    "description": "buffalo burger",
+    "score": 0.6582993865013123,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0bp3f6m",
+    "locale": "",
+    "description": "fried food",
+    "score": 0.6489384770393372,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0cdn1",
+    "locale": "",
+    "description": "hamburger",
+    "score": 0.6443697810173035,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/01z1jf2",
+    "locale": "",
+    "description": "american food",
+    "score": 0.6412472128868103,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/02wbm",
+    "locale": "",
+    "description": "food",
+    "score": 0.6021155118942261,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/02q08p0",
+    "locale": "",
+    "description": "dish",
+    "score": 0.5973641276359558,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0119x1zy",
+    "locale": "",
+    "description": "bun",
+    "score": 0.5898458957672119,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0b3dyl",
+    "locale": "",
+    "description": "finger food",
+    "score": 0.5897143483161926,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/07fjx2",
+    "locale": "",
+    "description": "vetkoek",
+    "score": 0.5624228715896606,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/04scj",
+    "locale": "",
+    "description": "meat",
+    "score": 0.5404865741729736,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  },
+  {
+    "mid": "/m/0p57p",
+    "locale": "",
+    "description": "recipe",
+    "score": 0.5130674839019775,
+    "confidence": 0,
+    "topicality": 0,
+    "boundingPoly": null,
+    "locations": [],
+    "properties": []
+  }
+];
+  res.json(json);
+});
 
 app.post('/upload-file-form', upload.single('thefile'), function(req, res) {
   if (!req.file) {
@@ -122,6 +327,7 @@ vision.annotateImage(request)
   .then((results) => {
     const labels = results[0].labelAnnotations;
     res.json(labels);
+
     // console.log('Labels:');
     // labels.forEach((label) => console.log(label.description));
   })
