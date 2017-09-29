@@ -31,11 +31,12 @@ $(function() {
       success: function(data) {
         console.log('data', data);
         if(data.Food == true){
-          
+window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
         }else{
           alert("Not food");
         }
         $('#ajaxResponse').html(JSON.stringify(data));
+
       }
     });
 

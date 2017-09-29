@@ -16,7 +16,7 @@ const fileName = './public/images/test1.jpeg';
 
 var multer  = require('multer');
 // var upload = multer({ storage: multer.memoryStorage() });
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({ dest: './public/images/' });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -43,6 +43,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/search', search);
 app.use('/recipe', recipe);
+
+app.get('/uploads/:imageUrl', function(req, res){
+  console.log(req.params.imageUrl);
+  res.sendFile(path.resolve(path.resolve(__dirname,"/uploads/"+req.params.imageUrl)));
+});
 
 // app.get('/searh-image', function(req, res){
 //   const request = {
@@ -380,8 +385,10 @@ if(isFood){
   var other1 = response[1].description;
   var other2 = response[2].description;
 
+  var imgUrl = "images/"+req.file.path.split('\\')[2];
+  console.log(imgUrl);
 
-  res.json({"Food": true, "Search": searchTerm, "Search2": other1, "Search3": other2});
+  res.json({"Food": true, "Search": searchTerm, "Search2": other1, "Search3": other2, "Img": imgUrl});
 }else{
 
   // TODO: Show Error
