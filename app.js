@@ -395,7 +395,7 @@ if(isFood){
   res.json({"Food": false});
 }
 
-res.json({"Food":"err"});
+// res.json({"Food":"err"});
     // res.json(response);
 
   // var request ={
