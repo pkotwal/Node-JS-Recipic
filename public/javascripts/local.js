@@ -30,6 +30,11 @@ $(function() {
       type: 'POST',
       success: function(data) {
         console.log('data', data);
+        if(data.Food == true){
+          
+        }else{
+          alert("Not food");
+        }
         $('#ajaxResponse').html(JSON.stringify(data));
       }
     });
