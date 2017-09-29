@@ -21,6 +21,7 @@ var upload = multer({ dest: 'uploads/' });
 var index = require('./routes/index');
 var users = require('./routes/users');
 var search = require('./routes/search');
+var recipe = require('./routes/recipe');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/search', search);
+app.use('/recipe', recipe);
 
 // app.get('/searh-image', function(req, res){
 //   const request = {
