@@ -39,9 +39,32 @@ $(function() {
       type: 'POST',
       success: function(data) {
         console.log('data', data);
+        if(data.Food == true){
+window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
+        }else{
+          alert("Not food");
+        }
         $('#ajaxResponse').html(JSON.stringify(data));
+
       }
     });
 
   });
+
+  function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#theinputfield").change(function(){
+    readURL(this);
+});
 })
