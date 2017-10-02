@@ -385,8 +385,8 @@ if(isFood){
   var other1 = response[1].description;
   var other2 = response[2].description;
 
-  var imgUrl = "images/"+req.file.path.split('\\')[2];
-  console.log(imgUrl);
+  var imgUrl = "images/"+req.file.path.substring(14);
+  // console.log();
 
   res.json({"Food": true, "Search": searchTerm, "Search2": other1, "Search3": other2, "Img": imgUrl});
 }else{
