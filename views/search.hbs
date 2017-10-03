@@ -1,1 +1,11 @@
-<img src="{{img}}" />
+<img src="{{urlinfo.img}}" />
+
+{{#each recipes}}
+  <p>{{this.name}}</p>
+  <img src="{{this.imageurl}}" style="max-height: 100px"/>
+  <p>{{this.text}}</p>
+  <p>{{this.recipeby}}</p>
+  <p>{{this.nextlink}}</p>
+</br>
+</br>
+{{/each}}
