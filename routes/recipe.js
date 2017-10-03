@@ -6,8 +6,21 @@ const cheerio = require('cheerio');
 router.get('/', function(req, res, next) {
   var divnum = "Hello";
 
-  //var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
-  var link = "http://"+req.query.url;
+
+const $ = cheerio.load(body);
+var currentRecipe = new Object();
+var mhead = $('.recipe-summary__h1').text()
+var rname = $('.submitter__name').text()
+var desc = $('.submitter__description').text()
+var imageurl = $('.hero-photo__wrap').find('img').attr("src");
+var prepTime = $('.prepTime__item').find('[itemprop="prepTime"]').text()
+var cookTime = $('.prepTime__item').find('[itemprop="cookTime"]').text()
+var readyTime = $('.prepTime__item').find('[itemprop="totalTime"]').text()
+
+var link="http://"+req.query.url;
+
+//   var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
+// >>>>>>> started-web-scraping-2
 
   request(link, function (error, response, body) {
     // console.log('error:', error); // Print the error if one occurred
@@ -53,6 +66,7 @@ router.get('/', function(req, res, next) {
 
     currentRecipe.item=mhead.trim();
     currentRecipe.imageurl=imageurl.trim();
+    currentRecipe.rname=rname.trim();
     currentRecipe.desc=desc.trim();
     currentRecipe.ingredients=ingredients;
     currentRecipe.prepTime=prepTime.trim();
