@@ -8,6 +8,7 @@ body {
   top: 0;
   left: 0;
   overflow-y: scroll;
+  text-transform: capitalize;
 }
 
 .mainPage{
@@ -34,7 +35,7 @@ body {
 
 .searchPage{
   text-align: center;
-  margin-top: 20px;
+  margin-top: 32px;
   font-family: Papyrus, fantasy;
   font-size: 50px;
   font-style: normal;
@@ -49,22 +50,6 @@ body {
   left: 100%;
 }
 
-#dragAndDropLabel {
-    position: relative;
-    top: 40%;
-}
-#indexDragDropDiv {
-  text-align: center;
-  background-color: #A9A9A9;
-  outline: 2px dashed black;
-  outline-offset: -10px;
-  height:150px;
-  width: 500px;
-  margin-left: 370px;
-  margin-top: 100px;
-  opacity: 0.4;-fa
-}
-
 #theSubmitButton{
   text-align: center;
   margin-top: 10px;
@@ -76,18 +61,19 @@ body {
 }
 
 #indexMainDiv{
-  margin-left: 440px;
-  margin-top: 80px;
+  margin: 80px auto;
+  text-align: center;
 }
 
-#uploadButtonDiv{
-  margin-left: 150px;
-  margin-top: 20px;
+#file-has-name{
+  margin-bottom: 25px;
+  display: inline-block;
 }
 
 img{
   margin-left: 10px;
   border-radius: 100%;
+  margin-top: 10px;
 }
 
 .didYourMeanTag{
@@ -100,18 +86,73 @@ img{
   font-variant: normal;
   font-weight: bold;
   line-height: 10px;
+}
 
+.recipe-box{
+  border-style: ridge;
+  border-color: #cacecc;
+  background-color: #d4d4d4;
 }
 
 #recipeOptionsList{
   margin-top: 10px;
 }
 
+.recipeNameTag{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.smallDescription{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+}
+
+.recipeByTag{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+}
+
+.recipeLinkButton{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+  font-weight: bold;
+}
+
 a:link {
-  color: #696969;
+  color: #696969 !important;
+}
+
+a:visited {
+  color: #696969 !important;
+}
+
+a:hover {
+  color: #23d160 !important;
 }
 
 .file-name{
   border: 1px solid #999;
-background-color: #d9d8d3;
+  background-color: #d9d8d3;
 }
