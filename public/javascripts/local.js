@@ -3,6 +3,7 @@ $(function() {
   $('#theinputfield').change(function() {
     console.log('picked file',
     $('#theinputfield')[0].files[0]);
+    $('.file-name').html($('#theinputfield')[0].files[0].name);
   });
 
   function allowDrop(ev) {

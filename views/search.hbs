@@ -1,7 +1,18 @@
-  <h1 class="searchPage">Here you go!</h1>
+<h1 class="searchPage">Here you go!</h1>
+<div id="secondPageMainDiv">
   <div id="requestedFoodImage">
     <img src="../images/test1.jpeg" style="width:304px;height:228px;">
   </div>
-  <div class="oval">
-    <label id="didYouMean"><span class="didYouMeanOval"><strong>Or This??</strong></span></label>
-  </div>
+  <div id="didYouMean">
+    <h6 class="didYourMeanTag">Or did you mean :
+      <a href="Item2">Item2</a>
+      ..Or..
+      <a href="Item3">Item3</a>
+    </h6>
+</div>
+<div class="container">
+<div id="recipeOptionsList" class="columns is-desktop">
+  {{#each recipe}}
+  <div class="column is-one-quarter">1</div>
+  <div>
+</div>

@@ -7,6 +7,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  overflow-y: scroll;
 }
 
 .mainPage{
@@ -20,9 +21,20 @@ body {
   line-height: 30px;
 }
 
+.secondTitle{
+  text-align: center;
+  margin-top: 70px;
+  font-family: Papyrus, fantasy;
+  font-size: 30px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 10px;
+}
+
 .searchPage{
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
   font-family: Papyrus, fantasy;
   font-size: 50px;
   font-style: normal;
@@ -53,19 +65,6 @@ body {
   opacity: 0.4;-fa
 }
 
-
-#indexFormDiv {
-  height: 600px;
-  text-align: center;
-  margin-top: -230px;
-}
-
-#theinputfield{
-  margin-top: 250px;
-  width: 300px;
-
-}
-
 #theSubmitButton{
   text-align: center;
   margin-top: 10px;
@@ -76,27 +75,43 @@ body {
   text-align: center;
 }
 
+#indexMainDiv{
+  margin-left: 440px;
+  margin-top: 80px;
+}
+
+#uploadButtonDiv{
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
 img{
+  margin-left: 10px;
   border-radius: 100%;
 }
 
-.oval {
-  width: 160px;
-  height: 80px;
-  background: #A9A9A9;
-  border-radius: 50%;
-  opacity: 0.6;
+.didYourMeanTag{
+
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 10px;
+
 }
 
-#didYouMean {
-    position: relative;
-    top: 40%;
-    left: 25%;
+#recipeOptionsList{
+  margin-top: 10px;
 }
 
+a:link {
+  color: #696969;
+}
 
-a {
-  color: #00B7FF;
-
-
+.file-name{
+  border: 1px solid #999;
+background-color: #d9d8d3;
 }
