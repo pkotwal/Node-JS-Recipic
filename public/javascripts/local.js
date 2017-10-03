@@ -3,8 +3,18 @@ $(function() {
   $('#theinputfield').change(function() {
     console.log('picked file',
     $('#theinputfield')[0].files[0]);
+    $('.file-name').html($('#theinputfield')[0].files[0].name);
   });
 
+  function allowDrop(ev) {
+      ev.preventDefault();
+  }
+
+  function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+  }
   // $('#theform').submit(function(e) {
   //   console.log('form submit')
   //   e.preventDefault();
@@ -30,9 +40,32 @@ $(function() {
       type: 'POST',
       success: function(data) {
         console.log('data', data);
+        if(data.Food == true){
+window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
+        }else{
+          alert("Not food");
+        }
         $('#ajaxResponse').html(JSON.stringify(data));
+
       }
     });
 
   });
+
+  function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#theinputfield").change(function(){
+    readURL(this);
+});
 })

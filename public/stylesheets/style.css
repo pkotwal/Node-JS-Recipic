@@ -1,8 +1,158 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/IMG_373651.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  text-transform: capitalize;
 }
 
-a {
-  color: #00B7FF;
+.mainPage{
+  text-align: center;
+  margin-top: 70px;
+  font-family: Papyrus, fantasy;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.secondTitle{
+  text-align: center;
+  margin-top: 70px;
+  font-family: Papyrus, fantasy;
+  font-size: 30px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 10px;
+}
+
+.searchPage{
+  text-align: center;
+  margin-top: 32px;
+  font-family: Papyrus, fantasy;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+
+.box__dragndrop{
+  top: 0;
+  left: 100%;
+}
+
+#theSubmitButton{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#requestedFoodImage{
+  margin-top: 40px;
+  text-align: center;
+}
+
+#indexMainDiv{
+  margin: 80px auto;
+  text-align: center;
+}
+
+#file-has-name{
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+img{
+  margin-left: 10px;
+  border-radius: 100%;
+  margin-top: 10px;
+}
+
+.didYourMeanTag{
+
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 10px;
+}
+
+.recipe-box{
+  border-style: ridge;
+  border-color: #cacecc;
+  background-color: #d4d4d4;
+}
+
+#recipeOptionsList{
+  margin-top: 10px;
+}
+
+.recipeNameTag{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.smallDescription{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+}
+
+.recipeByTag{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+}
+
+.recipeLinkButton{
+  text-align: center;
+  margin-top: 15px;
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+a:link {
+  color: #696969 !important;
+}
+
+a:visited {
+  color: #696969 !important;
+}
+
+a:hover {
+  color: #23d160 !important;
+}
+
+.file-name{
+  border: 1px solid #999;
+  background-color: #d9d8d3;
 }

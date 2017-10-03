@@ -1,0 +1,25 @@
+<h1 class="searchPage">Recipe for {{urlinfo.s1}}</h1>
+<div id="secondPageMainDiv">
+  <div id="requestedFoodImage">
+    <img src="../images/test1.jpeg" style="width:304px;height:228px;">
+  </div>
+  <div id="didYouMean">
+    <h6 class="didYourMeanTag">Or did you mean :
+      <a href="/search?s1={{urlinfo.s2}}&s2={{urlinfo.s3}}&s3={{urlinfo.s1}}&img={{urlinfo.img}}">{{urlinfo.s2}}</a>
+      ..Or..
+      <a href="/search?s1={{urlinfo.s3}}&s2={{urlinfo.s2}}&s3={{urlinfo.s1}}&img={{urlinfo.img}}">{{urlinfo.s3}}</a>
+    </h6>
+</div>
+<div class="container">
+<div id="recipeOptionsList" class="columns is-multiline is-mobile">
+  {{#each recipes}}
+  <div class="column is-one-quarter recipe-box">
+  <h2 class="recipeNameTag">{{this.name}}</h2>
+  <img src="{{this.imageurl}}"/>
+  <h1 class="smallDescription">{{this.text}}</h1>
+  <h1 class="recipeByTag">Recipe By:{{this.recipeby}}</p>
+  <a href="/recipe?url={{this.nextlink}}"><input type = "button" class = "button is-success recipeLinkButton" value="Go to recipe!"></a>
+  </div>
+  {{/each}}
+  <div>
+</div>
