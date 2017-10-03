@@ -1,14 +1,19 @@
-body {
+body{
   padding: 50px;
-  background-image: url("../images/IMG_373651.jpg");
+  /*background-image: url("../images/IMG_373651.jpg");*/
   background-size: cover;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: scroll;
   text-transform: capitalize;
+=======
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+>>>>>>> started-web-scraping-2
 }
 
 .mainPage{
