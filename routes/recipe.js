@@ -6,7 +6,8 @@ const cheerio = require('cheerio');
 router.get('/', function(req, res, next) {
   var divnum = "Hello";
 
-  var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
+  //var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
+  var link = "http://"+req.query.url;
 
   request(link, function (error, response, body) {
     // console.log('error:', error); // Print the error if one occurred

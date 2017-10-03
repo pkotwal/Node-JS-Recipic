@@ -10,12 +10,9 @@ router.get('/', function(req, res, next) {
   var s3 = req.query.s3;
   var img = req.query.img;
 
-<<<<<<< HEAD
-  var urlinfo = {"s1": s1, "s2": s2, "s3": s3, "img": img};
-=======
   var urlinfo = {"s1": s1, "s2": s2, "s3": s3, "img": img };
   var recipes = [];
->>>>>>> started-web-scraping-2
+
   var link = "http://allrecipes.com/search/results/?wt=" + s1;
 
     request(link, function (error, response, body) {
