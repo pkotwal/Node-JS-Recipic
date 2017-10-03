@@ -6,17 +6,6 @@ const cheerio = require('cheerio');
 router.get('/', function(req, res, next) {
   var divnum = "Hello";
 
-
-const $ = cheerio.load(body);
-var currentRecipe = new Object();
-var mhead = $('.recipe-summary__h1').text()
-var rname = $('.submitter__name').text()
-var desc = $('.submitter__description').text()
-var imageurl = $('.hero-photo__wrap').find('img').attr("src");
-var prepTime = $('.prepTime__item').find('[itemprop="prepTime"]').text()
-var cookTime = $('.prepTime__item').find('[itemprop="cookTime"]').text()
-var readyTime = $('.prepTime__item').find('[itemprop="totalTime"]').text()
-
 var link="http://"+req.query.url;
 
 //   var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
@@ -30,8 +19,10 @@ var link="http://"+req.query.url;
     const $ = cheerio.load(body);
     var currentRecipe = new Object();
     var mhead = $('.recipe-summary__h1').text()
+    var rname = $('.submitter__name').text()
     var desc = $('.submitter').text()
-    var imageurl = $('.hero-photo__wrap').find('img').attr("src");
+    // var imageurl = $('.hero-photo__wrap').find('img').attr("src");
+    var imageurl = req.query.img;
     var prepTime = $('.prepTime__item').find('[itemprop="prepTime"]').text()
     var cookTime = $('.prepTime__item').find('[itemprop="cookTime"]').text()
     var readyTime = $('.prepTime__item').find('[itemprop="totalTime"]').text()
