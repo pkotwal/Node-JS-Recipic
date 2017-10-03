@@ -39,10 +39,10 @@ $(function() {
       type: 'POST',
       success: function(data) {
         console.log('data', data);
-        if(data.Food == true){
-window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
+        if(!!data.Error){
+          alert(data.Error);
         }else{
-          alert("Not food");
+          window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
         }
         $('#ajaxResponse').html(JSON.stringify(data));
 

@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
   var s3 = req.query.s3;
   var img = req.query.img;
 
+  var urlinfo = {"s1": s1, "s2": s2, "s3": s3, "img": img };
+  var recipes = [];
   var link = "http://allrecipes.com/search/results/?wt=" + s1;
 
     request(link, function (error, response, body) {
@@ -19,7 +21,6 @@ router.get('/', function(req, res, next) {
 
       if (!error && response.statusCode == 200) {
       var $ = cheerio.load(body);
-      var recipes = [];
       $('article.grid-col--fixed-tiles').each(function(i, element){
         if(!($(this).hasClass('hub-card') || $(this).hasClass('video-card')) && !($(this).next().hasClass('article-card'))){
           var recipe = new Object();
@@ -33,15 +34,11 @@ router.get('/', function(req, res, next) {
           //console.log(recipeby);
           //console.log(nextlink);
 
-          if(!!a){
+          if(!!a && !!imageurl && !!text && !!recipeby && !!nextlink){
             recipe.name = a.trim();
-          if(!!imageurl)
             recipe.imageurl = imageurl.trim();
-          if(!!text)
             recipe.text = text.trim();
-          if(!!recipeby)
             recipe.recipeby = recipeby.trim();
-          if(!!nextlink)
             recipe.nextlink = nextlink.trim();
             //console.log("Recipe "+i+". "+recipe.name);
             //console.log("image url = "+recipe.imageurl);
@@ -49,11 +46,11 @@ router.get('/', function(req, res, next) {
           }
         }
       });
-      console.log(recipes);
+      // console.log(recipes);
     }
-    });
-
-    res.render('recipe', {'array': array});
+    // console.log(recipes);
+    res.render('search', {'recipes': recipes, 'urlinfo': urlinfo});
+});
 });
 
 module.exports = router;
