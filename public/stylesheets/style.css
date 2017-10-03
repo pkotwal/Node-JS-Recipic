@@ -9,7 +9,7 @@ body {
   left: 0;
 }
 
-.title{
+.mainPage{
   text-align: center;
   margin-top: 70px;
   font-family: Papyrus, fantasy;
@@ -19,6 +19,18 @@ body {
   font-weight: 500;
   line-height: 30px;
 }
+
+.searchPage{
+  text-align: center;
+  margin-top: 50px;
+  font-family: Papyrus, fantasy;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
 
 .box__dragndrop{
   top: 0;
@@ -57,6 +69,29 @@ body {
 #theSubmitButton{
   text-align: center;
   margin-top: 10px;
+}
+
+#requestedFoodImage{
+  margin-top: 40px;
+  text-align: center;
+}
+
+img{
+  border-radius: 100%;
+}
+
+.oval {
+  width: 160px;
+  height: 80px;
+  background: #A9A9A9;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+#didYouMean {
+    position: relative;
+    top: 40%;
+    left: 25%;
 }
 
 
