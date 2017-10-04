@@ -8,19 +8,12 @@ router.get('/', function(req, res, next) {
 
 var link="http://"+req.query.url;
 
-//   var link = "http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%202";
-// >>>>>>> started-web-scraping-2
-
   request(link, function (error, response, body) {
-    // console.log('error:', error); // Print the error if one occurred
-    // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    // console.log('body:', body); // Print the HTML for the Google homepage.
-
     const $ = cheerio.load(body);
     var currentRecipe = new Object();
     var mhead = $('.recipe-summary__h1').text()
     var rname = $('.submitter__name').text()
-    var desc = $('.submitter').text()
+    var desc = $('.submitter__description').text()
     // var imageurl = $('.hero-photo__wrap').find('img').attr("src");
     var imageurl = req.query.img;
     var prepTime = $('.prepTime__item').find('[itemprop="prepTime"]').text()
@@ -46,15 +39,6 @@ var link="http://"+req.query.url;
       recsteps.push(a);
     });
 
-    console.log(mhead);
-    console.log(imageurl);
-    console.log(desc);
-    console.log(ingredients);
-    console.log(prepTime);
-    console.log(cookTime);
-    console.log(readyTime);
-    console.log(recsteps);
-
     currentRecipe.item=mhead.trim();
     currentRecipe.imageurl=imageurl.trim();
     currentRecipe.rname=rname.trim();
@@ -65,7 +49,7 @@ var link="http://"+req.query.url;
     currentRecipe.readyTime=readyTime.trim();
     currentRecipe.steps=recsteps;
 
-    res.render('recipe', { si : currentRecipe });
+    res.render('recipe', {title: currentRecipe.item,  si : currentRecipe });
   });
 
 });

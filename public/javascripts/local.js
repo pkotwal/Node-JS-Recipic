@@ -6,25 +6,15 @@ $(function() {
     $('.file-name').html($('#theinputfield')[0].files[0].name);
   });
 
-  function allowDrop(ev) {
-      ev.preventDefault();
-  }
-
-  function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-  }
-  // $('#theform').submit(function(e) {
-  //   console.log('form submit')
-  //   e.preventDefault();
-  // });
-
   $('#theAjaxButton').click(function(e) {
     // how to select the file itself
+    $('#errorDiv').css('display', 'none');
+
     var f = $('#theinputfield')[0].files[0];
     if (!f) {
-      alert('pick a file');
+      // alert('pick a file');
+      $('#errorDiv').css('display', 'inline-block');
+      $('#errorText').html("Select an Image to upload");
       return;
     }
 
@@ -41,7 +31,9 @@ $(function() {
       success: function(data) {
         console.log('data', data);
         if(!!data.Error){
-          alert(data.Error);
+          $('#errorDiv').css('display', 'inline-block');
+          $('#errorText').html(data.Error);
+          // alert(data.Error);
         }else{
           window.location = "/search?s1="+data.Search+"&s2="+data.Search2+"&s3="+data.Search3+"&img="+data.Img;
         }
