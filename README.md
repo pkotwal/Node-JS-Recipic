@@ -18,7 +18,7 @@ Please fill out all of the following sections to help us grade your submission:
 * Aishwarya Gune, gune0016@umn.edu
 * Aishwarya Malpani, malpa004@umn.edu
 * Ameya Gurjar, gurja010@umn.edu
-* Pratk Kotwal, kotwal007@umn.edu
+* Pratk Kotwal, kotwa007@umn.edu
 
 
 ## Link to Site
