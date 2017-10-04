@@ -11,13 +11,13 @@
     </h6>
 </div>
 <div class="container">
-<div id="recipeOptionsList" class="columns is-multiline is-mobile">
+<div id="recipeOptionsList" class="columns is-multiline">
   {{#each recipes}}
   <div class="column is-one-quarter recipe-box">
-  <h2 class="recipeNameTag">{{this.name}}</h2>
+  <p class="recipeNameTag">{{this.name}}</p>
   <img src="{{this.imageurl}}"/>
-  <h1 class="smallDescription">{{this.text}}</h1>
-  <h1 class="recipeByTag">Recipe By:{{this.recipeby}}</p>
+  <p class="smallDescription">{{this.text}}</p>
+  <p class="recipeByTag">Recipe By:{{this.recipeby}}</p>
   <a href="/recipe?url={{this.nextlink}}&img={{this.imageurl}}"><input type = "button" class = "button is-success recipeLinkButton" value="Go to recipe!"></a>
   </div>
   {{/each}}

@@ -2,7 +2,7 @@
 <h3 class="secondTitle">Upload your image to get the recipe!</h3>
 <div id="indexMainDiv">
   <form action="/upload-file-form" enctype="multipart/form-data" method="post" id="theform">
-    <div id="file-has-name" class="file has-name">
+    <div class="file has-name is-boxed" style="text-align: center;display: inline-block;">
       <label class="file-label">
         <input id="theinputfield" class="file-input" type="file" name="thefile" accept="image/*">
         <span class="file-cta">
@@ -17,6 +17,21 @@
         </span>
       </label>
     </div>
+    <!-- <div id="file-has-name" class="file has-name">
+      <label class="file-label">
+        <input id="theinputfield" class="file-input" type="file" name="thefile" accept="image/*">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fa fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Select Image to Upload!
+          </span>
+        </span>
+        <span class="file-name">
+        </span>
+      </label>
+    </div> -->
 
     <div id="uploadButtonDiv">
       <input type = "button" class = "button is-success" value="Upload Image" accept="image/*" id="theAjaxButton">
