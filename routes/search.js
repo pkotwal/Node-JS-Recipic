@@ -37,22 +37,16 @@ router.get('/', function(req, res, next) {
 
           if(!!a && !!imageurl && !!text && !!recipeby && !!nextlink){
             recipe.name = a.trim();
-          //if(!!imageurl)
             recipe.imageurl = imageurl.trim();
-          //if(!!text)
             recipe.text = text.trim();
-          //if(!!recipeby)
             recipe.recipeby = recipeby.substring(10).trim();
-          //if(!!nextlink)
             recipe.nextlink = nextlink.trim();
-            //console.log("Recipe "+i+". "+recipe.name);
-            //console.log("image url = "+recipe.imageurl);
-	    recipes.push(recipe);
+	          recipes.push(recipe);
           }
         }
       });
       //console.log(recipes);
-          res.render('search', {'recipes': recipes, 'urlinfo': urlinfo});
+          res.render('search', {'title':'Recipes for '+s1 , 'recipes': recipes, 'urlinfo': urlinfo});
     }
     });
 
