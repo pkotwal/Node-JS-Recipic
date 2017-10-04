@@ -23,7 +23,7 @@ Please fill out all of the following sections to help us grade your submission:
 
 ## Link to Site
 
-<https://TODO.herokuapp.com/>
+<https://recipic-csci-5117.herokuapp.com/>
 
 
 ## Key Features
@@ -31,38 +31,30 @@ Please fill out all of the following sections to help us grade your submission:
 **Describe the most challenging features you implemented
 (one sentence per bullet, maximum 4 bullets):**
 
-* ...
+* Web Scraping: The data present on the website was of different types so we had to implement various techniques to access the data and display it in the proper format. 
+
+* Image Detection using Google Vision API: Although the API has changed, a lot of the documentation we found online was for the previous version.
 
 
 ## Screenshots of Site
 
-**[Add a screenshot of each key page (maximum 4)](https://stackoverflow.com/questions/10189356/how-to-add-screenshot-to-readmes-in-github-repository)
-along with a very brief caption:**
+Home Page: Directs User to upload image
+![](/Screenshot1.png)
 
-![](https://media.giphy.com/media/gJIJjrdhO5OYo/giphy.gif)
+Search Page: Displays Recipes of items similar to image uploaded
+![](/Screenshot2.png)
+
+Recipe Page: Displays single recipe
+![](/Screenshot3.png)
 
 
 ## External Dependencies
 
-**Document integrations with 3rd Party code or services here.
-Please do not document required libraries (e.g., Express, Bulma).**
-
-* Library or service name: description of use
-* ...
-
-**If there's anything else you would like to disclose about how your project
-relied on external code, expertise, or anything else, please disclose that
-here:**
-
-...
-
+* Google Vision API: Used to perform label detection, to determine what items the image contains
+* Cheerio: Node module we have used to perform web scraping
 
 ## Links to Test Data
 
-This project requires user-submitted data.  If you have files or other scripts 
-that would be necessary (or helpful) for us to test your application, please 
-link to them here.  For example, if your project parses gzipped apache logs, 
-provide a few gzipped apache logs here.
+The website takes as an input a picture of food. Any image is fine as long as the food item is the major focus of the image.
 
-* link to file
-* ...
+Since we are using Google Vision API to perform image processing for label detection, the results may not always be accurate in some cases. But a different image of the same food item might help.
