@@ -1,4 +1,4 @@
-body {
+body{
   padding: 50px;
   background-image: url("../images/IMG_373651.jpg");
   background-size: cover;
@@ -14,7 +14,7 @@ body {
 .mainPage{
   text-align: center;
   margin-top: 70px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 50px;
   font-style: normal;
   font-variant: normal;
@@ -25,7 +25,7 @@ body {
 .secondTitle{
   text-align: center;
   margin-top: 70px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-variant: normal;
@@ -36,7 +36,7 @@ body {
 .searchPage{
   text-align: center;
   margin-top: 32px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 50px;
   font-style: normal;
   font-variant: normal;
@@ -80,7 +80,7 @@ img{
 
   text-align: center;
   margin-top: 15px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 25px;
   font-style: normal;
   font-variant: normal;
@@ -101,7 +101,7 @@ img{
 .recipeNameTag{
   text-align: center;
   margin-top: 15px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-variant: normal;
@@ -112,7 +112,7 @@ img{
 .smallDescription{
   text-align: center;
   margin-top: 15px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-variant: normal;
@@ -122,7 +122,7 @@ img{
 .recipeByTag{
   text-align: center;
   margin-top: 15px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-variant: normal;
@@ -132,7 +132,24 @@ img{
 .recipeLinkButton{
   text-align: center;
   margin-top: 15px;
-  font-family: Papyrus, fantasy;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.finalRecipeBox{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  padding: 0 45px !important;
+  padding-bottom: 50px !important;
+}
+
+.container{
+  text-align: center;
+  margin-top: 15px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-variant: normal;

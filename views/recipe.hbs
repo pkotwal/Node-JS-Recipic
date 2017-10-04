@@ -1,3 +1,40 @@
-<h1>Recipe</h1>
-<p>{{si}}
-</p>
+<section class="container">
+  <div class="box finalRecipeBox">
+    <div id="requestedFoodImage"><img src="{{si.imageurl}}"/></div>
+    <div class="columns has-text-centered">
+
+      <div class="column">
+        <h1 class="title">{{si.item}}</h1>
+        <p>{{si.desc}}</p>
+        <br>
+        <p>Preparation time:{{si.prepTime}}</p>
+        <p>Cooking Time:{{si.cookTime}}</p>
+        <p>Ready TIme:{{si.readyTime}}</p>
+      </div>
+    </div>
+
+    <!-- <div class="columns has-text-centered">
+
+    </div> -->
+
+    <h1 class="title is-4 has-text-centered"> Ingredients </h1>
+    <div class="columns is-multiline is-mobile">
+
+      {{#each si.ingredients}}
+      <div class="column is-half "><li>{{this}}</li></div>
+      {{/each}}
+
+    </div>
+
+    <h1 class="title is-4 has-text-centered"> Directions </h1>
+    <ol>
+      {{#each si.steps}}
+      <li>{{this}}</li>
+    </br>
+    {{/each}}
+  </ol>
+
+
+
+</div>
+</section>

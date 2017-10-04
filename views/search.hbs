@@ -1,7 +1,7 @@
 <h1 class="searchPage">Recipe for {{urlinfo.s1}}</h1>
 <div id="secondPageMainDiv">
   <div id="requestedFoodImage">
-    <img src="../images/test1.jpeg" style="width:304px;height:228px;">
+    <img src="{{urlinfo.img}}" style="width:304px;height:228px;">
   </div>
   <div id="didYouMean">
     <h6 class="didYourMeanTag">Or did you mean :
@@ -18,7 +18,7 @@
   <img src="{{this.imageurl}}"/>
   <h1 class="smallDescription">{{this.text}}</h1>
   <h1 class="recipeByTag">Recipe By:{{this.recipeby}}</p>
-  <a href="/recipe?url={{this.nextlink}}"><input type = "button" class = "button is-success recipeLinkButton" value="Go to recipe!"></a>
+  <a href="/recipe?url={{this.nextlink}}&img={{this.imageurl}}"><input type = "button" class = "button is-success recipeLinkButton" value="Go to recipe!"></a>
   </div>
   {{/each}}
   <div>
